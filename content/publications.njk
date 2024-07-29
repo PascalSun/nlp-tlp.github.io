@@ -7,7 +7,7 @@ eleventyNavigation:
 ---
 
 {% for group, items in collections.publications | groupby("data.group") %}
-    <section style="margin-top: 40px;">
+    <section>
     <h2>{{ group }}</h2>
     <ul class="publications-list">
     {% for item in items %}
