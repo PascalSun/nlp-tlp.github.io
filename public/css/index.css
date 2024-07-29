@@ -863,7 +863,7 @@ section.width-80 {
   padding: 0 20px;
 }
 .profile-card .profile-card-photo-container.logo-container .profile-card-photo {
-  background-size: contain;
+  background-size: contain !important;
   max-height: 140px;
 }
 .profile-card .profile-card-photo-container.logo-container:hover {
@@ -1214,7 +1214,9 @@ article blockquote {
 .article-images > *:not(:last-child) {
   margin-right: 20px;
 }
-.article-images .article-image {
+.article-images .article-image,
+.article-images a img {
+  width: auto;
   height: 120px;
   margin-bottom: 10px;
 }

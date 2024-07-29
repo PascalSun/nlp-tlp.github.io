@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "nodemon --ignore ./_site/",
 		"build": "npm-run-all --serial build:sass build:eleventy",
-		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
+		"build-ghpages": "npm-run-all --serial build:sass build:eleventy",
 		"start": "npm-run-all --parallel watch:sass start:eleventy",
 		"debug": "DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",

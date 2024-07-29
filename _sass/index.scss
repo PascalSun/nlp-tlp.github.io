@@ -692,7 +692,7 @@ section {
       padding: 0 20px;
 
       .profile-card-photo {
-        background-size: contain;
+        background-size: contain !important;
         max-height: 140px;
       }
       &:hover {
@@ -1089,7 +1089,9 @@ article {
   > *:not(:last-child) {
     margin-right: 20px;
   }
-  .article-image {
+  .article-image,
+  a img {
+    width: auto;
     height: 120px;
     margin-bottom: 10px;
   }
