@@ -1,0 +1,1485 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>UWA NLP-TLP Group - Presentations</title>
+		<meta name="description" content="The website of the UWA Natural &amp; Technical Language Processing Group.">
+
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="UWA NLP-TLP Group">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="UWA NLP-TLP Group">
+
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/vendor/lightbox/css/lightbox.min.css">
+		
+		<style>* { box-sizing: border-box; }
+@import url(https://fonts.googleapis.com/css?family=Cabin:400,600);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,600);
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,600);
+@import url(https://fonts.googleapis.com/css?family=Lemon|Quicksand:400,300|Lato:300);
+/*
+$primary-color: #8b0000;
+$grad-1: #E83131;
+$grad-2: #A31414;*/
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  color: black;
+  font-size: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+}
+
+body {
+  font-size: 18px;
+  line-height: 150%;
+  color: #444;
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
+  background: #eee;
+  /*background-image: url("../images/footer_lodyas_inverted.png");*/
+  position: relative;
+  /* Extra margins to allow for nicer blurring on edges */
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lora", serif;
+  line-height: 140%;
+}
+
+h1 {
+  font-size: 2.4em;
+  border-bottom: 1px solid rgba(36, 67, 151, 0.2);
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+p a {
+  color: #244397;
+  font-weight: bold;
+}
+
+a {
+  color: #244397;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #244397;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #1f3a82;
+}
+
+.float-right {
+  float: right;
+}
+
+.container {
+  width: 1279px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (max-width: 1280px) {
+  .container {
+    width: 992px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.main-container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+  align-items: flex-start;
+}
+.flex-container.flex-align-center {
+  align-items: center;
+}
+.flex-container.justify-space-between {
+  justify-content: space-between;
+}
+@media (max-width: 800px) {
+  .flex-container.main-flex-container {
+    display: block;
+  }
+}
+
+.padded-1x {
+  padding: 10px;
+}
+
+.padded-v-1x {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.padded-h-1x {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.margin-left-1x {
+  margin-left: 10px;
+}
+
+.margin-right-1x {
+  margin-right: 10px;
+}
+
+.margin-bottom-1x {
+  margin-bottom: 10px;
+}
+
+.padded-2x {
+  padding: 20px;
+}
+
+.padded-v-2x {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.padded-h-2x {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.margin-left-2x {
+  margin-left: 20px;
+}
+
+.margin-right-2x {
+  margin-right: 20px;
+}
+
+.margin-bottom-2x {
+  margin-bottom: 20px;
+}
+
+.padded-3x {
+  padding: 30px;
+}
+
+.padded-v-3x {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.padded-h-3x {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.margin-left-3x {
+  margin-left: 30px;
+}
+
+.margin-right-3x {
+  margin-right: 30px;
+}
+
+.margin-bottom-3x {
+  margin-bottom: 30px;
+}
+
+.padded-4x {
+  padding: 40px;
+}
+
+.padded-v-4x {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.padded-h-4x {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.margin-left-4x {
+  margin-left: 40px;
+}
+
+.margin-right-4x {
+  margin-right: 40px;
+}
+
+.margin-bottom-4x {
+  margin-bottom: 40px;
+}
+
+.padded-5x {
+  padding: 50px;
+}
+
+.padded-v-5x {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.padded-h-5x {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.margin-left-5x {
+  margin-left: 50px;
+}
+
+.margin-right-5x {
+  margin-right: 50px;
+}
+
+.margin-bottom-5x {
+  margin-bottom: 50px;
+}
+
+.padded-6x {
+  padding: 60px;
+}
+
+.padded-v-6x {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.padded-h-6x {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.margin-left-6x {
+  margin-left: 60px;
+}
+
+.margin-right-6x {
+  margin-right: 60px;
+}
+
+.margin-bottom-6x {
+  margin-bottom: 60px;
+}
+
+.padded-7x {
+  padding: 70px;
+}
+
+.padded-v-7x {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.padded-h-7x {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.margin-left-7x {
+  margin-left: 70px;
+}
+
+.margin-right-7x {
+  margin-right: 70px;
+}
+
+.margin-bottom-7x {
+  margin-bottom: 70px;
+}
+
+.padded-8x {
+  padding: 80px;
+}
+
+.padded-v-8x {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.padded-h-8x {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.margin-left-8x {
+  margin-left: 80px;
+}
+
+.margin-right-8x {
+  margin-right: 80px;
+}
+
+.margin-bottom-8x {
+  margin-bottom: 80px;
+}
+
+.padded-9x {
+  padding: 90px;
+}
+
+.padded-v-9x {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.padded-h-9x {
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+.margin-left-9x {
+  margin-left: 90px;
+}
+
+.margin-right-9x {
+  margin-right: 90px;
+}
+
+.margin-bottom-9x {
+  margin-bottom: 90px;
+}
+
+.padded-10x {
+  padding: 100px;
+}
+
+.padded-v-10x {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.padded-h-10x {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.margin-left-10x {
+  margin-left: 100px;
+}
+
+.margin-right-10x {
+  margin-right: 100px;
+}
+
+.margin-bottom-10x {
+  margin-bottom: 100px;
+}
+
+.padded {
+  padding: 10px;
+}
+
+.row {
+  display: block;
+}
+
+.box-shadow {
+  box-shadow: 1px 1px 4px -2px rgba(0, 0, 0, 0.9);
+}
+
+.box-shadow-inset {
+  box-shadow: inset 0px 1px 4px -2px rgba(0, 0, 0, 0.9), inset 0px -1px 3px -2px rgba(0, 0, 0, 0.9);
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.logo-group .logo-text {
+  margin: 0;
+  margin-left: 10px;
+  font-size: 20px;
+  line-height: 110%;
+}
+.logo-group .logo-text h2 {
+  font-size: 19px;
+  margin: 0;
+}
+.logo-group .logo-text h3 {
+  font-size: 15px;
+  margin: 0;
+  font-weight: normal;
+  opacity: 0.8;
+}
+.logo-group.logo-group-large .logo-text {
+  line-height: 150%;
+}
+.logo-group.logo-group-large .logo-text h2 {
+  font-size: 25px;
+}
+.logo-group.logo-group-large .logo-text h3 {
+  font-size: 22px;
+}
+
+.logo {
+  padding: 15px 10px;
+  image-rendering: -webkit-optimize-contrast;
+  height: 100%;
+}
+.logo img {
+  height: 100%;
+}
+.logo.nlp-tlp-logo {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+header {
+  background: white;
+  height: 70px;
+}
+header .logo {
+  height: 70px;
+}
+header .header-title {
+  padding: 0 10px;
+}
+
+footer {
+  background: #152859;
+  color: white;
+  padding: 20px 0;
+  box-shadow: 0 1500px 0 1500px #152859;
+}
+footer p {
+  line-height: 150%;
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+footer > * {
+  opacity: 0.8;
+}
+footer .logo {
+  height: 100px;
+  margin-right: 10px;
+}
+footer .logo-text {
+  color: white;
+}
+footer .logo-group {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+footer hr {
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.banner {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+.banner img {
+  width: 100%;
+}
+
+#hero {
+  min-height: 240px;
+  background: #1f3a82;
+  position: relative;
+  font-size: 0.9em;
+}
+#hero.hero-condensed {
+  min-height: 100px;
+  font-size: 0.6em;
+}
+#hero .hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background-image: url("/images/uwa-background.jpg");
+  background-size: cover;
+  background-position: 80% 50%;
+  background-repeat: no-repeat;
+  z-index: 1;
+  mix-blend-mode: luminosity;
+}
+#hero .hero-background:before {
+  width: 100%;
+  height: 100%;
+  content: " ";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.15);
+  background-blend-mode: multiply;
+}
+#hero .hero-text {
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  line-height: 250%;
+}
+#hero .hero-text h1 {
+  margin: 0;
+}
+#hero .hero-text h2 {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+@media (max-width: 992px) {
+  #hero .hero-text {
+    padding: 15px 0;
+  }
+}
+
+#hero-graph-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.23;
+  pointer-events: none;
+  overflow: hidden;
+  mix-blend-mode: screen;
+}
+
+nav.sidenav {
+  min-width: 300px;
+  width: 300px;
+  background: rgba(36, 67, 151, 0.05);
+  border-radius: 8px;
+  line-height: 180%;
+}
+@media (max-width: 800px) {
+  nav.sidenav {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+nav.sidenav h3 {
+  color: #1a316e;
+  margin: 0;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(36, 67, 151, 0.2);
+  font-size: 1.1em;
+}
+nav.sidenav .new-item {
+  color: white;
+  margin-left: 1em;
+  border-radius: 10px;
+  background: rgb(204, 165, 6);
+  font-size: 0.7em;
+  padding: 0.4em 0.5em;
+  transform: translate(-2px, -2px);
+  display: inline-block;
+  line-height: 100%;
+}
+
+ul.chevron-bullets {
+  list-style: none;
+  padding: 0 20px;
+  margin: 0;
+}
+ul.chevron-bullets.extra-indent li:before {
+  margin: 0 15px 0 0px;
+}
+ul.chevron-bullets li:before {
+  font-family: "FontAwesome";
+  content: "\f054";
+  margin: 0 15px 0 -15px;
+  color: rgba(21, 40, 89, 0.5);
+  font-size: 0.7em;
+}
+ul.chevron-bullets li a {
+  font-weight: normal;
+}
+ul.chevron-bullets li a.active {
+  font-weight: bold;
+  position: relative;
+  color: #152859;
+}
+
+main {
+  min-height: 600px;
+  flex-grow: 1;
+}
+main p:first-child {
+  margin-top: 0;
+}
+main div > section:first-child h2,
+main div > section:first-child h3,
+main div > section:first-child h4,
+main div > section:first-child h5,
+main div > section:first-child h6 {
+  margin-top: 0px;
+}
+
+section > h3 {
+  padding-bottom: 4px;
+}
+section > h2,
+section > h3,
+section > h4,
+section > h5 {
+  width: 100%;
+}
+section.width-80 {
+  width: 80%;
+}
+
+.collaborator-logos-section {
+  background: #e2e2e2;
+  min-height: 300px;
+  padding: 30px 10px;
+}
+.collaborator-logos-section p {
+  text-align: center;
+}
+.collaborator-logos-section .h2-with-center-line {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.collaborator-logos-section .h2-with-center-line h2 {
+  background: #e2e2e2;
+  z-index: 10;
+  padding: 0 40px;
+  text-align: center;
+}
+.collaborator-logos-section .h2-with-center-line:after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #c2c2c2;
+  content: " ";
+}
+
+.collaborator-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.collaborator-logos a.collaborator-logo {
+  width: 25%;
+  height: 150px;
+  padding: 5px 15px;
+  margin: 0 20px;
+  margin-bottom: 40px;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.2s ease, transform 0.2s linear;
+}
+.collaborator-logos a.collaborator-logo:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  transform: scale(1.05);
+}
+.collaborator-logos a.collaborator-logo div {
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.grid-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+}
+.grid-2 .grid-item {
+  width: calc(50% - 15px);
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+.grid-2 .grid-item.full-width {
+  width: 100%;
+}
+@media (max-width: 1280px) {
+  .grid-2 .grid-item {
+    width: 100%;
+  }
+}
+
+.presentation {
+  background: rgba(36, 67, 151, 0.07);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  height: 100%;
+}
+.presentation .presentation-video-container {
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+  background: #111;
+}
+.presentation .presentation-video-container div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.presentation .presentation-video-container .presentation-video-container-fadein {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.presentation .presentation-video-container .presentation-video-container-fadein.ready {
+  opacity: 1;
+}
+.presentation .presentation-title {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #222;
+}
+.presentation .presentation-authors-and-date {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  margin-top: -5px;
+}
+.presentation .presentation-description {
+  font-size: 0.9em;
+  line-height: 150%;
+}
+.presentation .presentation-details-container {
+  padding: 5px 15px 10px 15px;
+}
+
+.grid-2 .profile-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.grid-2 .profile-card .profile-card-body {
+  height: 100%;
+}
+.grid-2 .profile-card .profile-card-gutter {
+  margin-top: auto;
+  align-self: end;
+  justify-self: end;
+}
+.grid-2 .profile-card .profile-card-photo-container {
+  height: 100%;
+}
+
+.repo-intro {
+  background: rgba(36, 67, 151, 0.05);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.repo-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+.repo-card p {
+  margin-top: 5px;
+}
+.repo-card:not(:last-child) {
+  border-bottom: 1px solid rgba(36, 67, 151, 0.2);
+}
+.repo-card .repo-icons {
+  margin-top: -10px;
+  font-size: 0.8em;
+  margin-bottom: 15px;
+}
+.repo-card .repo-icons span.repo-icon-set {
+  margin-right: 20px;
+}
+.repo-card .repo-icons span.repo-icon-set i {
+  margin-right: 4px;
+}
+
+.profile-card {
+  background: rgba(36, 67, 151, 0.07);
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.profile-card.collaboration-item {
+  background: none;
+  border-bottom: 1px solid rgba(36, 67, 151, 0.2);
+  padding: 20px 0px;
+}
+.profile-card.collaboration-item:first-child {
+  margin-top: -20px;
+}
+.profile-card .profile-card-body {
+  display: flex;
+}
+.profile-card .profile-card-photo-container {
+  width: 33%;
+  background: rgba(242, 242, 242, 0.65);
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+}
+.profile-card .profile-card-photo-container.dark-bg {
+  background: #111;
+}
+@media (max-width: 1280px) {
+  .profile-card .profile-card-photo-container {
+    min-height: 220px;
+  }
+}
+@media (max-width: 800px) {
+  .profile-card .profile-card-photo-container {
+    min-height: 180px;
+  }
+}
+@media (max-width: 650px) {
+  .profile-card .profile-card-photo-container {
+    min-height: 140px;
+  }
+}
+.profile-card .profile-card-photo-container.logo-container {
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.2s ease, transform 0.2s linear;
+  border-radius: 8px;
+  padding: 0 20px;
+}
+.profile-card .profile-card-photo-container.logo-container .profile-card-photo {
+  background-size: contain !important;
+  max-height: 140px;
+}
+.profile-card .profile-card-photo-container.logo-container:hover {
+  background: #fafafa;
+  transform: scale(1.05);
+}
+.profile-card .profile-card-photo-container .profile-card-photo {
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+.profile-card .profile-card-photo-container .profile-card-photo.demo-photo {
+  background-size: cover;
+}
+.profile-card .profile-card-photo-container .profile-card-photo.missing-photo {
+  background: #152859;
+  position: relative;
+}
+.profile-card .profile-card-photo-container .profile-card-photo.missing-photo:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  opacity: 0.07;
+  background-image: url("/images/swan.png");
+  background-size: 200%;
+  background-position: 90% 50%;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.profile-card.demo-card .profile-card-text-container {
+  padding: 15px 25px;
+}
+.profile-card.demo-card .profile-card-text-container p.profile-card-name {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.profile-card.demo-card .profile-card-text-container p.profile-card-byline {
+  font-size: 0.9em;
+  line-height: 130%;
+  margin-top: -5px;
+}
+.profile-card .profile-card-text-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 1;
+  padding: 15px 15px;
+  line-height: 100%;
+}
+.profile-card .profile-card-text-container div.profile-card-name-byline {
+  height: 120px;
+}
+.profile-card .profile-card-text-container p.profile-card-name {
+  font-weight: bold;
+  color: #222;
+  line-height: 130%;
+}
+.profile-card .profile-card-text-container p.profile-card-byline {
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+.profile-card .profile-card-text-container p.profile-card-details {
+  line-height: 150%;
+  font-size: 0.9em;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.profile-card .profile-card-text-container p.profile-card-details span {
+  display: block;
+}
+.profile-card .profile-card-text-container p.profile-card-details span:not(:last-child) {
+  margin-bottom: 5px;
+}
+.profile-card .profile-card-text-container p.profile-card-phd-title {
+  font-size: 0.85em;
+  margin: 10px 0;
+}
+.profile-card .profile-card-text-container .profile-card-buttons {
+  display: flex;
+  margin-top: 30px;
+  font-size: 1em;
+}
+.profile-card .profile-card-gutter {
+  width: 100%;
+  background: rgba(36, 67, 151, 0.05);
+  padding: 10px 15px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profile-card .profile-card-gutter .profile-card-gutter-left {
+  font-size: 0.65em;
+  line-height: 130%;
+  margin-right: 70px;
+}
+.profile-card .profile-card-gutter .profile-card-gutter-right {
+  display: flex;
+  font-size: 0.9em;
+}
+.profile-card .profile-card-gutter .profile-card-gutter-right a.button:not(:last-child) {
+  margin-right: 15px;
+}
+.profile-card .profile-card-gutter .profile-card-supported-by {
+  text-align: center;
+  width: 100%;
+  padding: 2px 10px;
+}
+.profile-card .profile-card-gutter .profile-card-supported-by span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+.profile-card .profile-card-gutter .profile-card-supported-by .profile-card-supported-by-logo {
+  margin: 0 auto;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.profile-card .profile-card-links {
+  display: flex;
+  font-size: 0.85em;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+.profile-card .profile-card-links i.fa {
+  font-size: 0.7em;
+  margin-right: 6px;
+}
+.profile-card .profile-card-links p {
+  opacity: 0.9;
+  margin: 0;
+}
+.profile-card .profile-card-links p:not(:last-child):after {
+  color: #222;
+  margin: 0 10px;
+  content: "|";
+  opacity: 0.4;
+}
+.profile-card p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.button {
+  background: rgba(26, 49, 110, 0.7);
+  border-radius: 4px;
+  padding: 10px 25px;
+  color: white;
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 50px;
+  line-height: 120%;
+  min-width: 160px;
+  text-align: center;
+}
+.button:hover {
+  text-decoration: none;
+}
+.button div.subtitle {
+  font-size: 0.75em;
+  margin-top: 2px;
+  opacity: 0.9;
+  text-align: center;
+}
+.button:visited {
+  color: white;
+}
+.button:hover, .button:active {
+  color: white;
+  background: rgba(36, 67, 151, 0.7);
+}
+.button:focus {
+  transform: translate(1px, 1px);
+}
+
+.homepage-logo {
+  width: 240px;
+  height: 240px;
+  float: right;
+  margin-left: 20px;
+  margin-right: -60px;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+.homepage-logo img {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 992px) {
+  .homepage-logo {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+div.route-section {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  box-sizing: border-box;
+}
+div.route-section:not(.homepage-route-section) {
+  top: 0;
+}
+div.route-section.fade-enter {
+  position: relative;
+  opacity: 0;
+  transform: translate(-30px, 0);
+}
+div.route-section.fade-enter-active {
+  transition: transform 400ms ease, opacity 200ms ease;
+  transform: translate(0px, 0);
+  opacity: 1;
+}
+div.route-section.fade-enter-done {
+  opacity: 1;
+  position: relative;
+  transform: none;
+}
+div.route-section:not(.fade-enter-done):not(.fade-enter-active):not(.fade-exit) {
+  position: relative;
+}
+div.route-section.fade-exit {
+  transition: transform 400ms ease, opacity 200ms ease;
+  transform: translate(0px, 0);
+  opacity: 1;
+}
+div.route-section.fade-exit.fade-exit-active {
+  opacity: 0.00001;
+  transform: translate(-30px, 0);
+}
+
+div.transition-group {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+ul.publications-list {
+  line-height: 130%;
+  font-size: 0.9em;
+}
+ul.publications-list li {
+  margin-bottom: 8px;
+}
+ul.publications-list li .publication-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.authors-with-photos {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4px 0;
+  margin-bottom: -8px;
+}
+
+a:hover .author-with-photo {
+  text-decoration: none;
+}
+
+.author-with-photo {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  background: rgba(97, 130, 217, 0.12);
+  background-blend-mode: multiply;
+  border-radius: 4px;
+  padding: 1px 8px;
+  padding-left: 1px;
+  font-size: 0.8em;
+  margin-bottom: 8px;
+}
+.author-with-photo span.author-name {
+  color: #101e45;
+}
+.author-with-photo .author-mini-photo {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: #222;
+  overflow: hidden;
+  background-size: contain;
+}
+.author-with-photo .author-mini-photo .author-mini-photo-image {
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+article {
+  margin-bottom: 40px;
+}
+article h3 {
+  color: #333;
+}
+article h4 {
+  margin-bottom: 40px;
+  padding-top: 0.5em;
+}
+article:first-child {
+  margin-top: 40px;
+}
+article:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+article .article-details {
+  background: rgba(36, 67, 151, 0.1);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+}
+article .article-details p {
+  margin: 0;
+}
+article br {
+  margin: 10px 0;
+  display: block;
+  content: " ";
+}
+article blockquote {
+  border-left: 6px solid rgba(97, 130, 217, 0.35);
+  margin-left: 0;
+  padding-left: 30px;
+}
+
+.article-images {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.article-images > *:not(:last-child) {
+  margin-right: 20px;
+}
+.article-images .article-image,
+.article-images a img {
+  width: auto;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+.article-author {
+  display: flex;
+  flex-align: center;
+  margin-bottom: 20px;
+}
+.article-author .author-with-photo {
+  margin-left: 8px;
+}
+
+.crypted-email:after {
+  content: attr(data-name) "@" attr(data-domain) "." attr(data-tld);
+}
+
+b {
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=index.css.map */</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="/vendor/lightbox/js/lightbox.min.js"></script>
+	</head>
+	<body>
+		<a href="#skip" class="visually-hidden">Skip to main content</a>
+
+		<header class="header">
+    <div class="container flex-container flex-align-center justify-space-between">
+
+      <div class="header-left flex-container flex-align-center">
+        <a href="https://uwa.edu.au" target="_blank">
+          <div class="logo">
+            <img src="/images/logos/uwacrest-blue.png" alt="UWA logo" />
+          </div>
+        </a>
+      </div>
+      <div class="header-right flex-container flex-align-center">
+       <div class="logo-group">
+
+          <div class="logo nlp-tlp-logo">
+            <img src="/images/logos/nlp-tlp-logo.png" alt="NLP-TLP Logo"/>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+		<div id="hero" class="flex-container flex-align-center box-shadow-inset hero-background hero-condensed">
+    <div class="hero-background"></div>
+    <div class="container flex-container flex-align-center">
+      <div class="hero-text">
+        <h2>The University of Western Australia</h2>
+        <h1>Natural &amp; Technical Language Processing Group</h1>
+      </div>
+    </div>
+</div>
+
+		<div class="container main-flex-container flex-container padded-v-4x">
+		    
+
+<nav class="sidenav padded-v-1x padded-h-2x margin-right-3x">
+  <h3>UWA NLP-TLP Group</h3>
+  <ul class="chevron-bullets">
+    
+      <li><a href="/" >Home</a></li>
+    
+      <li><a href="/our-team/" >Our Team</a></li>
+    
+      <li><a href="/current-research/" >Current Research</a></li>
+    
+      <li><a href="/software_demos/" >Software Demos</a></li>
+    
+      <li><a href="/publications/" >Publications</a></li>
+    
+      <li><a href="/seminars/" >Seminars</a></li>
+    
+      <li><a href="/presentations/"  class="active">Presentations</a></li>
+    
+      <li><a href="/collaborations/" >Collaborations</a></li>
+    
+      <li><a href="/phd-opportunities/" >PhD Opportunities</a></li>
+    
+      <li><a href="/news/" >News</a></li>
+    
+      <li><a href="/contact-us/" >Contact Us</a></li>
+    
+    <li><a target="_blank" href="https://github.com/nlp-tlp/">NLP-TLP GitHub <i style="font-size: 0.8em; margin-left: 0.5em" class="fa fa-external-link"></i></a></li>
+  </ul>
+</nav>
+		    <main class="padded margin-left-3x" id="skip">
+		    
+<h1>Presentations</h1>
+
+
+
+
+  <section>
+    <h2>Conferences</h2>
+    <div class="grid-2">
+
+    
+      <div class="grid-item">
+        <div class="presentation">
+          <div class="presentation-video-container">
+            <div class="presentation-video-container-fadein ready">
+             <iframe width="100%" height="100%" style="outline: none; border: none"
+                src="https://www.youtube.com/embed/fr3nE5Buu_0">
+                </iframe>
+            </div>
+
+          </div>
+          <div class="presentation-details-container">
+            <div class="presentation-title">CyIE: EACL2023 presentation</div>
+            
+              <div class="presentation-authors-and-date">C Nguyen, May 2023</div>
+            
+            <div class="presentation-description">Chau Nguyen&#39;s presentation of &#39;CyIE: Cylinder Embeddings for Multi-hop Reasoning over Knowledge Graphs&#39; at EACL2023.</div>
+          </div>
+
+        </div>
+      </div>
+    
+      <div class="grid-item">
+        <div class="presentation">
+          <div class="presentation-video-container">
+            <div class="presentation-video-container-fadein ready">
+             <iframe width="100%" height="100%" style="outline: none; border: none"
+                src="https://www.youtube.com/embed/ZEKAzNNfeSc">
+                </iframe>
+            </div>
+
+          </div>
+          <div class="presentation-details-container">
+            <div class="presentation-title">LLMs for Failure Mode Classification</div>
+            
+              <div class="presentation-authors-and-date">M Stewart, November 2023</div>
+            
+            <div class="presentation-description">Michael Stewart&#39;s presentation on our investigation into using Large Language Models (LLMs) for Failure Mode Classification.</div>
+          </div>
+
+        </div>
+      </div>
+    
+      <div class="grid-item">
+        <div class="presentation">
+          <div class="presentation-video-container">
+            <div class="presentation-video-container-fadein ready">
+             <iframe width="100%" height="100%" style="outline: none; border: none"
+                src="https://www.youtube.com/embed/e5Tihjr_3Z4">
+                </iframe>
+            </div>
+
+          </div>
+          <div class="presentation-details-container">
+            <div class="presentation-title">Redcoat - Video demo</div>
+            
+              <div class="presentation-authors-and-date">M Stewart, October 2019</div>
+            
+            <div class="presentation-description">A video demonstration of &quot;Redcoat - A Collaborative Annotation Tool for Hierarchical Entity Typing&quot; for EMNLP 2019.</div>
+          </div>
+
+        </div>
+      </div>
+    
+      <div class="grid-item">
+        <div class="presentation">
+          <div class="presentation-video-container">
+            <div class="presentation-video-container-fadein ready">
+             <iframe width="100%" height="100%" style="outline: none; border: none"
+                src="https://www.youtube.com/embed/4TJqtcv81GE">
+                </iframe>
+            </div>
+
+          </div>
+          <div class="presentation-details-container">
+            <div class="presentation-title">Seq2KG - KR2020 presentation</div>
+            
+              <div class="presentation-authors-and-date">M Stewart, September 2020</div>
+            
+            <div class="presentation-description">Michael Stewart&#39;s presentation of &#39;Seq2KG: An End-to-End Neural Model for Domain Agnostic Knowledge Graph (not Text Graph) Construction from Text&#39; for KR2020.</div>
+          </div>
+
+        </div>
+      </div>
+    
+    </div>
+</section>
+
+  <section>
+    <h2>Invited talks</h2>
+    <div class="grid-2">
+
+    
+      <div class="grid-item">
+        <div class="presentation">
+          <div class="presentation-video-container">
+            <div class="presentation-video-container-fadein ready">
+             <iframe width="100%" height="100%" style="outline: none; border: none"
+                src="https://www.youtube.com/embed/SZdSevmAv_8">
+                </iframe>
+            </div>
+
+          </div>
+          <div class="presentation-details-container">
+            <div class="presentation-title">Research Bytes: Unlocking knowledge buried within technical records</div>
+            
+              <div class="presentation-authors-and-date">M Stewart, June 2020</div>
+            
+            <div class="presentation-description">Technical records such as safety logs and maintenance work orders contain a wealth of critical information, yet they are seriously under utilised. We demonstrate how &quot;technical language processing&quot; can be employed to unlock this buried knowledge and provide significant benefit to industry professionals.</div>
+          </div>
+
+        </div>
+      </div>
+    
+    </div>
+</section>
+
+
+		    </main>
+		</div>
+
+		<footer>
+  <div class="container">
+    <div class="logo-group logo-group-large">
+      <div class="logo nlp-tlp-logo">
+        <img src="/images/logos/nlp-tlp-logo-white.png" alt="NLP-TLP Logo"/>
+      </div>
+      <div class="logo-text">
+        <h3>The University of Western Australia</h3>
+        <h2>Natural & Technical Language Processing Group</h2>
+      </div>
+    </div>
+    <hr/>
+    <p>&copy; UWA NLP-TLP Group 2024.<br/>
+    Website by Michael Stewart.</p>
+  </div>
+</footer>
+
+		<!-- This page `/presentations/` was built on 2024-07-29T07:31:42.915Z -->
+	</body>
+</html>
