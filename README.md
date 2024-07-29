@@ -55,13 +55,21 @@ The exception is News. News images should be placed under [/content/news/images]
 
 Let's say I want to add a person to the site. Here's an example of how to do that.
 
-First, clone this repo, and run the dev server (so you can see the changes you make) as per the first section.
+First, clone this repo, and run the dev server (so you can see the changes you make) as per the first section:
 
-Then, navigate to `/content/our-team`. Assuming the person you want to add is a current member, navigate to `/current`. Copy one of the existing people, then name it to the name of your person.
+    git clone https://github.com/nlp-tlp/nlp-tlp.github.io.git
+    npm install
+    npm run dev
 
-Then, open that new file in your text editor, and edit the relevant data as necessary. Save the file.
+Then, navigate to `/content/our-team` in your file explorer. Assuming the person you want to add is a current member, navigate to `/current`. Copy one of the existing people, then name it to the name of your person.
 
-Add your files to a new commit and commit your changes:
+Then, open that new markdown file in your text editor, and edit the relevant data as necessary. Save the file.
+
+If they have a profile image, paste it into [/public/images/our-team](/public-images/people). (Make sure the filename is the same as the one you specified in the markdown file).
+
+Now go check in your browser to make sure the person appears (go to [https://localhost:8080/our-team](https://localhost:8080/our-team)).
+
+Assuming it worked OK, add your files to a new commit and commit your changes:
 
     git add .
     git commit -m "Added person <person's name>"
