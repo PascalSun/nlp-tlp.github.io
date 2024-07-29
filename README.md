@@ -51,6 +51,29 @@ In general, images should be placed under the [/public/images](/public/images) f
 
 The exception is News. News images should be placed under [/content/news/images](/content/news/images) (this allows them to work with Lightbox, which makes them enlarge when the user clicks on them).
 
+#### Example - adding a person
+
+Let's say I want to add a person to the site. Here's an example of how to do that.
+
+First, clone this repo, and run the dev server (so you can see the changes you make) as per the first section.
+
+Then, navigate to `/content/our-team`. Assuming the person you want to add is a current member, navigate to `/current`. Copy one of the existing people, then name it to the name of your person.
+
+Then, open that new file in your text editor, and edit the relevant data as necessary. Save the file.
+
+Add your files to a new commit and commit your changes:
+
+    git add .
+    git commit -m "Added person <person's name>"
+
+And push to the main branch:
+
+    git push -u origin main
+
+And in a minute or so, the website will have updated automatically.
+
+## Other details
+
 ### What are the `.11tydata` files in each folder?
 
 You may have noticed that each folder in `/content` has an `.11tydata` file in it. This file tells Eleventy the collection each page belongs to, and ensures that they don't get rendered as individual pages with their own URLs. These files should not be deleted or changed.
@@ -65,3 +88,4 @@ Note that some of the pages have grouped collections (e.g. Current Research, Our
 
 -   The "Our team" folder is separated into Current and Alumni (it was the only good way I could think of to force Alumni to the bottom).
 -   To edit the stylesheet, make sure to edit the SASS files (under [/\_sass](/_sass)) and not the CSS files under [/public/css](/public/css). The way I built the site, the SASS renders into the public folder (this is not standard practice with Eleventy but I much prefer SASS).
+-   **Please be sure to keep the filename conventions the same** - all new pages should be slug case, e.g. no capital letters, and hyphens between words. `michael-stewart.md` is good, `michael_stewart.md`, `Michael-stewart.md` etc is not.
