@@ -6,6 +6,19 @@ eleventyNavigation:
   order: 2
 ---
 
-{% for person in collections.people %}
-	{{ person.data.name }}
+{% for group, items in collections.current_people | groupby("data.group") %}
+    <section>
+    <h2>{{ group }}</h2>
+    <div class="grid-2">
+    {% for item in items %}
+      {% include 'partials/person.njk' %}
+    {% endfor %}
 {% endfor %}
+
+<section>
+<h2>Alumni</h2>
+<div class="grid-2">
+{% for item in collections.alumni_people %}
+  {% include 'partials/person.njk' %}
+{% endfor %}
+</div>

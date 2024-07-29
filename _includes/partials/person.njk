@@ -1,0 +1,37 @@
+<div class="grid-item">
+  <div class="profile-card">
+    <div class="profile-card-body">
+
+      <div class="profile-card-photo-container dark-bg">
+      {% if item.data.image_filename %}
+
+        <div class="profile-card-photo" style="background: url('/images/people/{{ item.data.image_filename }}"></div>
+
+      {% else %}
+        <div class="profile-card-photo missing-photo"></div>
+      {% endif %}
+      </div>
+
+      <div class="profile-card-text-container">
+        <p class="profile-card-name">{{ item.data.name }}</p>
+        <p class="profile-card-byline">{{ item.data.title }}</p>
+
+        {% if item.data.project_title %}
+          <p class="profile-card-phd-title"><em>{{ item.data.project_title }}</em></p>
+        {% endif %}
+
+        <div class="profile-card-links">
+          {% if item.data.uwa_profile %}
+            <p><a target="_blank" href={{ item.data.uwa_profile }}>UWA Profile</a></p>
+          {% endif %}
+          {% if item.data.website %}
+            <p><a target="_blank" href={{ item.data.website }}>Website</a></p>
+          {% endif %}
+          {% if item.data.linkedin_profile %}
+            <p><a target="_blank" href={{ item.data.linkedin_profile }}>LinkedIn</a></p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
