@@ -1,122 +1,67 @@
-# eleventy-base-blog v8
+# UWA NLP-TLP Website
 
-A starter repository showing how to build a blog with the [Eleventy](https://www.11ty.dev/) site generator (using the [v2.0 release](https://www.11ty.dev/blog/eleventy-v2/)).
+The website of the UWA Natural and Technical Language group. Now built using Eleventy.
 
-## Getting Started
+## How to clone this repo and run it locally
 
-* [Want a more generic/detailed getting started guide?](https://www.11ty.dev/docs/getting-started/)
+To clone the repo:
 
-1. Make a directory and navigate to it:
+    git clone https://github.com/nlp-tlp/nlp-tlp.github.io.git
 
-```
-mkdir my-blog-name
-cd my-blog-name
-```
+To run it locally, first navigate to the location in which you cloned the site and install the required packages:
 
-2. Clone this Repository
+    npm install
 
-```
-git clone https://github.com/11ty/eleventy-base-blog.git .
-```
+Then to run the development server:
 
-_Optional:_ Review `eleventy.config.js` and `_data/metadata.js` to configure the site’s options and data.
+    npm run dev
 
-3. Install dependencies
+This will keep the site alive on [https://localhost:8080](https://localhost:8080) and should refresh it if you make any changes.
 
-```
-npm install
-```
+## How to update this website
 
-4. Run Eleventy
+This is an [Eleventy](https://www.11ty.dev/) website that automatically deploys to GitHub pages upon commits to the main branch.
 
-Generate a production-ready build to the `_site` folder:
+All of the content of the website is located in [/content](/content). The `.njk` files in this directory are the main pages (the homepage, current research, our team, etc), and the `.md` files in each of the corresponding folders are the data that is used to populate those pages.
 
-```
-npx @11ty/eleventy
-```
+For example, [/content/current-research.njk](/content/current-research.njk) is the "Current Research" page (https://nlp-tlp.github.io/current-research). This Nunjucks file is responsible for the layout of that page. Each research item is represented by a seperate file in [/content/current-research/](/content/current-research), e.g. [adaptive-user-interfaces-for-industrial.md](content/current-research/adaptive-user-interfaces-for-industrial.md).
 
-Or build and host on a local development server:
+Each markdown file generally consists of (key, value) pairs that carry the respective item's data. For example, the aforementioned research item looks like this:
 
-```
-npx @11ty/eleventy --serve
-```
+    ---
+    name: Adaptive User Interfaces for Industrial Maintenance Procedures
+    authors: Caitlin Woods
+    description: In many organisations, maintenance procedure documentation (used to guide technicians through complex manual tasks) is still paper-based. Caitlin's research combines Human-Computer Interaction and Ontology Engineering to transform the way that organisations manage and use procedure documentation to support maintenance technicians.
+    group: PhD and Honours Projects
+    ---
 
-Or you can run [debug mode](https://www.11ty.dev/docs/debugging/) to see all the internals.
+The Nunjucks file knows where to put each of these values to render the page.
 
-## Features
+### Adding/editing/deleting new items
 
-- Using [Eleventy v2.0](https://www.11ty.dev/blog/eleventy-v2/) with zero-JavaScript output.
-	- Content is exclusively pre-rendered (this is a static site).
-	- Can easily [deploy to a subfolder without changing any content](https://www.11ty.dev/docs/plugins/html-base/)
-	- All URLs are decoupled from the content’s location on the file system.
-	- Configure templates via the [Eleventy Data Cascade](https://www.11ty.dev/docs/data-cascade/)
-- **Performance focused**: four-hundos Lighthouse score out of the box!
-	- [View the Lighthouse report for the latest build](https://eleventy-base-blog.netlify.app/reports/lighthouse/) courtesy of the [Netlify Lighthouse plugin](https://github.com/netlify/netlify-plugin-lighthouse).
-	- _0 Cumulative Layout Shift_
-	- _0ms Total Blocking Time_
-- Local development live reload provided by [Eleventy Dev Server](https://www.11ty.dev/docs/dev-server/).
-- Content-driven [navigation menu](https://www.11ty.dev/docs/plugins/navigation/)
-- [Image optimization](https://www.11ty.dev/docs/plugins/image/) via the `{% image %}` shortcode.
-	- Zero-JavaScript output.
-	- Support for modern image formats automatically (e.g. AVIF and WebP)
-	- Prefers `<img>` markup if possible (single image format) but switches automatically to `<picture>` for multiple image formats.
-	- Automated `<picture>` syntax markup with `srcset` and optional `sizes`
-	- Includes `width`/`height` attributes to avoid [content layout shift](https://web.dev/cls/).
-	- Includes `loading="lazy"` for native lazy loading without JavaScript.
-	- Includes [`decoding="async"`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/decoding)
-	- Images can be co-located with blog post files.
-	- View the [Image plugin source code](https://github.com/11ty/eleventy-base-blog/blob/main/eleventy.config.images.js)
-- Per page CSS bundles [via `eleventy-plugin-bundle`](https://github.com/11ty/eleventy-plugin-bundle).
-- Built-in [syntax highlighter](https://www.11ty.dev/docs/plugins/syntaxhighlight/) (zero-JavaScript output).
-- Blog Posts
-	- Draft posts: use `draft: true` to mark a blog post as a draft. Drafts are **only** included during `--serve`/`--watch` and are excluded from full builds. View the [Drafts plugin source code](https://github.com/11ty/eleventy-base-blog/blob/main/eleventy.config.drafts.js).
-	- Automated next/previous links
-	- Accessible deep links to headings
-- Generated Pages
-	- Home, Archive, and About pages.
-	- [Feeds for Atom and JSON](https://www.11ty.dev/docs/plugins/rss/)
-	- `sitemap.xml`
-	- Zero-maintenance tag pages ([View on the Demo](https://eleventy-base-blog.netlify.app/tags/))
-	- Content not found (404) page
+If you want to add a new item (a person, news item, etc), the easiest way is to clone this repo, duplicate one of the files, edit it, and push back to the main branch.
 
-## Demos
+Editing is similar - just edit the markdown file of the item you want to change, then push to main.
 
-- [Netlify](https://eleventy-base-blog.netlify.app/)
-- [Vercel](https://demo-base-blog.11ty.dev/)
-- [GitHub Pages](https://11ty.github.io/eleventy-base-blog/)
-- [Remix on Glitch](https://glitch.com/~11ty-eleventy-base-blog)
-- [Cloudflare Pages](https://eleventy-base-blog-d2a.pages.dev/)
+Same goes for deleting - just delete the file and push to main.
 
-## Deploy this to your own site
+#### Images
 
-Deploy this Eleventy site in just a few clicks on these services:
+In general, images should be placed under the [/public/images](/public/images) folder into their respective collections. For example, if you want to add a person, add their profile photo to [/public/images/people](/public/images/people).
 
-- [Deploy this to **Netlify**](https://app.netlify.com/start/deploy?repository=https://github.com/11ty/eleventy-base-blog)
-- [Deploy this to **Vercel**](https://vercel.com/import/project?template=11ty%2Feleventy-base-blog)
-- Look in `.github/workflows/gh-pages.yml.sample` for information on Deploying to **GitHub Pages**.
-- [Try it out on **Stackblitz**](https://stackblitz.com/github/11ty/eleventy-base-blog)
-- If you run Eleventy locally you can drag your `_site` folder to [`netlify.com/drop`](https://netlify.com/drop) to upload it without using `git`.
-- Read more about [Deploying an Eleventy project](https://www.11ty.dev/docs/deployment/) to the web.
+The exception is News. News images should be placed under [/content/news/images](/content/news/images) (this allows them to work with Lightbox, which makes them enlarge when the user clicks on them).
 
-### Implementation Notes
+### What are the `.11tydata` files in each folder?
 
-- `content/about/index.md` is an example of a content page.
-- `content/blog/` has the blog posts but really they can live in any directory. They need only the `posts` tag to be included in the blog posts [collection](https://www.11ty.dev/docs/collections/).
-- Use the `eleventyNavigation` key (via the [Eleventy Navigation plugin](https://www.11ty.dev/docs/plugins/navigation/)) in your front matter to add a template to the top level site navigation. This is in use on `content/index.njk` and `content/about/index.md`.
-- Content can be in _any template format_ (blog posts needn’t exclusively be markdown, for example). Configure your project’s supported templates in `eleventy.config.js` -> `templateFormats`.
-- The `public` folder in your input directory will be copied to the output folder (via `addPassthroughCopy` in the `eleventy.config.js` file). This means `./public/css/*` will live at `./_site/css/*` after your build completes.
-- Provides two content feeds:
-	- `content/feed/feed.njk`
-	- `content/feed/json.njk`
-- This project uses three [Eleventy Layouts](https://www.11ty.dev/docs/layouts/):
-	- `_includes/layouts/base.njk`: the top level HTML structure
-	- `_includes/layouts/home.njk`: the home page template (wrapped into `base.njk`)
-	- `_includes/layouts/post.njk`: the blog post template (wrapped into `base.njk`)
-- `_includes/postslist.njk` is a Nunjucks include and is a reusable component used to display a list of all the posts. `content/index.njk` has an example of how to use it.
+You may have noticed that each folder in `/content` has an `.11tydata` file in it. This file tells Eleventy the collection each page belongs to, and ensures that they don't get rendered as individual pages with their own URLs. These files should not be deleted or changed.
 
-#### Content Security Policy
+### What if I want to add a new page, not just an item on an existing page?
 
-If your site enforces a [Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) (as public-facing sites should), you have a few choices (pick one):
+If you want to do this, you'll need to make a new `.njk` file under `/content`, similar to all the others. It might be easiest to adapt an existing file to do what you want it to do.
 
-1. In `base.njk`, remove `<style>{% getBundle "css" %}</style>` and uncomment `<link rel="stylesheet" href="{% getBundleFileUrl "css" %}">`
-2. Configure the server with the CSP directive `style-src: 'unsafe-inline'` (less secure).
+Note that some of the pages have grouped collections (e.g. Current Research, Our Team etc) and some are not grouped (e.g. News).
+
+### Other nuances
+
+-   The "Our team" folder is separated into Current and Alumni (it was the only good way I could think of to force Alumni to the bottom).
+-   To edit the stylesheet, make sure to edit the SASS files (under [/\_sass](/_sass)) and not the CSS files under [/public/css](/public/css). The way I built the site, the SASS renders into the public folder (this is not standard practice with Eleventy but I much prefer SASS).
