@@ -22,11 +22,13 @@ This will keep the site alive on [https://localhost:8080](https://localhost:8080
 
 This is an [Eleventy](https://www.11ty.dev/) website that automatically deploys to GitHub pages upon commits to the main branch.
 
-All of the content of the website is located in [/content](/content). The `.njk` files in this directory are the main pages (the homepage, current research, our team, etc), and the `.md` files in each of the corresponding folders are the data that is used to populate those pages.
+All of the content of the website is located in [/content](/content). The `.njk` (Nunjucks) files in this directory are the main pages (the homepage, current research, our team, etc), and the `.md` (Markdown) files in each of the corresponding folders are the data that is used to populate those pages.
 
-For example, [/content/current-research.njk](/content/current-research.njk) is the "Current Research" page (https://nlp-tlp.github.io/current-research). This Nunjucks file is responsible for the layout of that page. Each research item is represented by a seperate file in [/content/current-research/](/content/current-research), e.g. [adaptive-user-interfaces-for-industrial.md](content/current-research/adaptive-user-interfaces-for-industrial.md).
+For example, [/content/current-research.njk](/content/current-research.njk) is the "Current Research" page (https://nlp-tlp.github.io/current-research). This Nunjucks file is responsible for the layout of that page.
 
-Each markdown file generally consists of (key, value) pairs that carry the respective item's data. For example, the aforementioned research item looks like this:
+Each research item is represented by a seperate Markdown file in [/content/current-research/](/content/current-research), e.g. [adaptive-user-interfaces-for-industrial.md](content/current-research/adaptive-user-interfaces-for-industrial.md).
+
+The markdown files generally consist of (key, value) pairs that carry the respective item's data. For example, the aforementioned research item looks like this:
 
     ---
     name: Adaptive User Interfaces for Industrial Maintenance Procedures
@@ -35,11 +37,11 @@ Each markdown file generally consists of (key, value) pairs that carry the respe
     group: PhD and Honours Projects
     ---
 
-The Nunjucks file knows where to put each of these values to render the page.
+The Nunjucks files describe where to put each of these values to render the page.
 
 ### Adding/editing/deleting new items
 
-If you want to add a new item (a person, news item, etc), the easiest way is to clone this repo, duplicate one of the files, edit it, and push back to the main branch.
+If you want to add a new item (a person, news item, etc), the easiest way is to clone this repo, duplicate one of the files, edit it, and push back to the main branch. Eleventy builds the pages based off of the file structure in `/content`, like magic.
 
 Editing is similar - just edit the markdown file of the item you want to change, then push to main.
 
