@@ -1,28 +1,48 @@
 ---
 layout: layouts/home.njk
-eleventyNavigation:
-  key: Home
-  order: 1
-numberOfLatestPostsToShow: 3
 ---
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
 
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</p>
-{% endif %}
-
-{# List every content page in the project #}
-{#
-<ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
-</ul>
-#}
+<section class="width-80">
+	<div class="homepage-logo">
+		<img src="images/logos/nlp-tlp-logo.png" alt="UWA logo" />
+	</div>
+	<p>
+		The UWA NLP-TLP Group is a team of researchers conducting
+		state-of-the-art research in
+		<b>natural and technical language processing</b> at The University of
+		Western Australia in Perth, Western Australia. Our work is based in
+		the following areas:
+	</p>
+	<p>
+		<ul class="chevron-bullets extra-indent">
+			<li>Entity recognition</li>
+			<li>Lexical normalisation</li>
+			<li>Knowledge graphs</li>
+			<li>Language models</li>
+			<li>Ontologies</li>
+			<li>Annotation</li>
+			<li>Adaptive user interfaces</li>
+			<li>Knowledge representation and reasoning</li>
+		</ul>
+	</p>
+	<p>
+		We have a strong collaborative spirit and are well-connected globally.
+		We have made a wide range of contributions to top-tier international
+		conferences such as EMNLP, ICDM, and KR.
+	</p>
+	<p>
+		Our research group is unique in that we strive ensure our research is
+		translated to <b>practical software</b> so that it can be directly
+		used by industry. We have developed a number of
+		<a href="/software-demos">software tools</a>, including the
+		Text2KG system which won the first prize at the
+		<a
+			href="https://ieeexplore.ieee.org/abstract/document/8970692"
+			target="_blank"
+		>
+			2019 ICDM Knowledge Graph Contest
+		</a>
+		.
+	</p>
+</section>
