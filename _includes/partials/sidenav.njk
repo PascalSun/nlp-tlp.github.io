@@ -1,0 +1,11 @@
+{% set navPages = collections.all | eleventyNavigation(navItem) %}
+
+<nav class="sidenav padded-v-1x padded-h-2x margin-right-3x">
+  <h3>UWA NLP-TLP Group</h3>
+  <ul class="chevron-bullets">
+    {% for entry in navPages %}
+      <li><a href="{{ entry.url}}" {% if entry.url == page.url or entry.url == page.url | getbase %} class="active"{% endif %}>{{ entry.title }}</a></li>
+    {% endfor %}
+    <li><a target="_blank" href="https://github.com/nlp-tlp/">NLP-TLP GitHub <i style="font-size: 0.8em; margin-left: 0.5em" class="fa fa-external-link"></i></a></li>
+  </ul>
+</nav>

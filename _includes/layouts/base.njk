@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<title>{% if title %}{{ title + " - " + metadata.title }}{% else %}{{metadata.title }}{% endif %}</title>
+		<title>{% if title %}{{ metadata.title + " - " + title}}{% else %}{{metadata.title }}{% endif %}</title>
 		<meta name="description" content="{{ description or metadata.description }}">
 
 		<link rel="shortcut icon" href="/images/favicon.ico">
@@ -54,7 +54,12 @@
 
 		{% include 'partials/hero.njk' %}
 
-		{{ content | safe }}
+		<div class="container main-flex-container flex-container padded-v-4x">
+		    {% include 'partials/sidenav.njk' %}
+		    <main class="padded margin-left-3x" id="skip">
+		    {{ content | safe }}
+		    </main>
+		</div>
 
 		{% include 'partials/footer.njk' %}
 

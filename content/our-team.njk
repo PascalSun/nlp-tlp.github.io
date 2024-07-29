@@ -1,0 +1,11 @@
+---
+title: Our Team
+layout: layouts/default.njk
+eleventyNavigation:
+  key: Our Team
+  order: 2
+---
+
+{% for person in collections.people %}
+	{{ person.data.name }}
+{% endfor %}
