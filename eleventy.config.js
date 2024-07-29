@@ -44,6 +44,15 @@ module.exports = function (eleventyConfig) {
 		return "/" + value.split("/")[1] + "/";
 	});
 
+	// Parse a youtube link in the form e.g.
+	// https://www.youtube.com/watch?v=ZEKAzNNfeSc and return the embed link
+	eleventyConfig.addFilter("getYoutubeEmbedLink", (youtubeLink) => {
+		return youtubeLink.replace(
+			"https://www.youtube.com/watch?v=",
+			"https://www.youtube.com/embed/",
+		);
+	});
+
 	// Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
