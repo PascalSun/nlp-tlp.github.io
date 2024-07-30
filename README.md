@@ -67,7 +67,7 @@ Then, navigate to `/content/our-team` in your file explorer. Assuming the person
 
 Then, open that new markdown file in your text editor, and edit the relevant data as necessary. Save the file.
 
-If they have a profile image, paste it into [/public/images/our-team](/public-images/people). (Make sure the filename is the same as the one you specified in the markdown file).
+If they have a profile image, paste it into [/public/images/people](/public/images/people). (Make sure the filename is the same as the one you specified in the markdown file).
 
 Now go check in your browser to make sure the person appears (go to [https://localhost:8080/our-team](https://localhost:8080/our-team)).
 
