@@ -116,8 +116,9 @@ module.exports = function (eleventyConfig) {
 		return new Date().toISOString();
 	});
 
-	// Redirects for redcoat etc
-	//eleventyConfig.addPassthroughCopy("_redirects");
+	// Add the CNAME file into the _site folder
+	// (this allows GitHub pages to know about nlp-tlp.org)
+	eleventyConfig.addPassthroughCopy("CNAME");
 
 	eleventyConfig.addCollection("redirects", function (collectionApi) {
 		// lets make a variable to hold our redirects
