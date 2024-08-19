@@ -25,7 +25,7 @@ eleventyNavigation:
       <div class="profile-card-gutter-left"></div>
       <div class="profile-card-gutter-right">
           {% if item.data.paper_link %}
-            <a class="button" target="_blank" href={item.data.paper_link}>
+            <a class="button" target="_blank" href="{item.data.paper_link}">
               Read the paper
               {% if item.data.paper_venue %}
                 <div class="subtitle">from {{ item.data.paper_venue }}</div>

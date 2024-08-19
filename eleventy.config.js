@@ -123,11 +123,11 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addCollection("redirects", function (collectionApi) {
 		// lets make a variable to hold our redirects
 		let redirects = [
-			["aquila", "https://aquila.nlp-tlp.org/aquila"],
-			["redcoat", "https://redcoat.nlp-tlp.org/redcoat"],
-			["text2kg", "https://text2kg.nlp-tlp.org/text2kg"],
-			["echidna", "https://echidna.nlp-tlp.org/echidna"],
-			["maintenance_kg", "https://echidna.nlp-tlp.org/echidna"],
+			["aquila", "https://aquila.nlp-tlp.org/"],
+			["redcoat", "https://redcoat.nlp-tlp.org/"],
+			["text2kg", "https://text2kg.nlp-tlp.org/"],
+			["echidna", "https://echidna.nlp-tlp.org/"],
+			["maintenance_kg", "https://echidna.nlp-tlp.org/"],
 		];
 
 		return redirects;
