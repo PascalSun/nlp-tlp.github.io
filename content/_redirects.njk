@@ -1,0 +1,21 @@
+---
+# https://boehs.org/node/11ty-aliases
+pagination:
+  data: collections.redirects
+  size: 1
+  alias: redirect
+permalink: "{{redirect[0]}}"
+layout: ""
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="1; URL='{{ redirect[1] }}'" />
+  <title>Redirecting to: {{ redirect[1] }}</title>
+</head>
+<body>
+    You are being redirected to <a href="{{ redirect[1] }}">{{ redirect[1] }}</a>
+</body>
+</html>

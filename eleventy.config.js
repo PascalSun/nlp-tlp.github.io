@@ -116,6 +116,22 @@ module.exports = function (eleventyConfig) {
 		return new Date().toISOString();
 	});
 
+	// Redirects for redcoat etc
+	//eleventyConfig.addPassthroughCopy("_redirects");
+
+	eleventyConfig.addCollection("redirects", function (collectionApi) {
+		// lets make a variable to hold our redirects
+		let redirects = [
+			["aquila", "https://aquila.nlp-tlp.org/aquila"],
+			["redcoat", "https://redcoat.nlp-tlp.org/redcoat"],
+			["text2kg", "https://text2kg.nlp-tlp.org/text2kg"],
+			["echidna", "https://echidna.nlp-tlp.org/echidna"],
+			["maintenance_kg", "https://echidna.nlp-tlp.org/echidna"],
+		];
+
+		return redirects;
+	});
+
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line
