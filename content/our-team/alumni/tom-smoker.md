@@ -5,4 +5,5 @@ project_title: Rectifying knowledge graph link prediction using embedding-enhanc
 linkedin_profile: https://www.linkedin.com/in/thomassmoker
 image_filename: tom-smoker.jpg
 group: PhD Students
+order: 4
 ---

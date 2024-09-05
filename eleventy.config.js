@@ -44,6 +44,18 @@ module.exports = function (eleventyConfig) {
 		return "/" + value.split("/")[1] + "/";
 	});
 
+	eleventyConfig.addFilter("sortByOrder", (values) => {
+		return values.sort(function (a, b) {
+			let order_a = a.data.order || 999;
+			let order_b = b.data.order || 999;
+			return order_a - order_b;
+		});
+	});
+
+	// eleventyConfig.addCollection("people_academics", function (collectionApi) {
+	// 	return sortByOrder(collection.people_academics);
+	// });
+
 	// Parse a youtube link in the form e.g.
 	// https://www.youtube.com/watch?v=ZEKAzNNfeSc and return the embed link
 	eleventyConfig.addFilter("getYoutubeEmbedLink", (youtubeLink) => {

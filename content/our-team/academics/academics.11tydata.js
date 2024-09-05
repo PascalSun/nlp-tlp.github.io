@@ -1,4 +1,4 @@
 module.exports = {
-	tags: ["current_people"],
+	tags: ["people_academics"],
 	permalink: false, // Don't generate pages for each person
 };
